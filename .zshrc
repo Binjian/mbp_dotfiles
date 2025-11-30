@@ -197,9 +197,6 @@ export PATH="$HOME/.cask/bin:$PATH"
 export PATH="/opt/homebrew/opt/tcl-tk@8/bin:$PATH"
 export PATH="/opt/homebrew/opt/ccache/libexec:$PATH"
 
-# source "/opt/homebrew/bin/asdf.sh"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
 export PATH="$HOME/.asdf/installs/golang/1.22.3/packages/bin:$PATH"
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
 	zprof
@@ -210,6 +207,10 @@ export PATH="/USERS/x/Libray/Python/3.12/bin:$PATH"
 # poetry
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
+
+#source "/opt/homebrew/bin/asdf.sh"
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/x/.docker/completions $fpath)
