@@ -118,6 +118,13 @@ export EDITOR='vim'
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+# fzf command history
+source <(fzf --zsh)
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 ##tmuxifier import
 #export PATH="$HOME/.config/tmuxifier/bin:$PATH"
 #eval "$(tmuxifier init -)"
@@ -132,8 +139,8 @@ export PATH="$PATH:$HOME/.config/emacs/bin"
 # system python
 #export PATH="$PATH:$HOME/Library/Python/3.12/bin"
 
-# system rust
-export PATH="$PATH:$HOME/.cargo/bin"
+## system rust
+#export PATH="$PATH:$HOME/.cargo/bin"
 
 #Pyenv path setting
 export PYENV_ROOT="$HOME/.pyenv"
@@ -146,9 +153,9 @@ export LDFLAGS="-L/opt/homebrew/opt/jpeg/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/jpeg/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/jpeg/lib/pkgconfig"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+#___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 ## >>> conda initialize >>>
 ## !! Contents within this block are managed by 'conda init' !!
@@ -181,7 +188,7 @@ export PATH="/opt/homebrew/opt/imagemagick/bin:$PATH"
 export PATH="$PATH:/Users/x/.local/bin"
 # export PATH="/opt/homebrew/opt/ghostscript-x11/bin:$PATH"
 #
-export LD_LIBRARY_PATH="~/.mujoco/mujoco316/bin:$LD_LIBRARY_PATH"
+# export LD_LIBRARY_PATH="~/.mujoco/mujoco316/bin:$LD_LIBRARY_PATH"
 
 export MODULAR_HOME="/Users/x/.modular"
 export PATH="/Users/x/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
@@ -189,7 +196,7 @@ export PATH="/Users/x/.modular/pkg/packages.modular.com_max/bin:$PATH"
 export PYTHON_CONFIGURE_OPTS='--enable-optimizations --with-lto --enable-framework'
 export OpenMP_ROOT=$(brew --prefix)/opt/libomp
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/devel/math/coinhsl/lib"
-export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
+# export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
 export HDF5_DIR=/opt/homebrew/opt/hdf5 
 export BLOSC_DIR=/opt/homebrew/opt/c-blosc
 export PATH="$HOME/.cask/bin:$PATH"
@@ -197,12 +204,12 @@ export PATH="$HOME/.cask/bin:$PATH"
 export PATH="/opt/homebrew/opt/tcl-tk@8/bin:$PATH"
 export PATH="/opt/homebrew/opt/ccache/libexec:$PATH"
 
-export PATH="$HOME/.asdf/installs/golang/1.22.3/packages/bin:$PATH"
+# export PATH="$HOME/.asdf/installs/golang/1.22.3/packages/bin:$PATH"
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
 	zprof
 fi
-export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-export PATH="/USERS/x/Libray/Python/3.12/bin:$PATH"
+#export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+#export PATH="/USERS/x/Libray/Python/3.12/bin:$PATH"
 
 # poetry
 fpath+=~/.zfunc
@@ -218,6 +225,9 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 
+
+
 export ANTHROPIC_AUTH_TOKEN=ollama
 export ANTHROPIC_API_KEY=""
 export ANTHROPIC_BASE_URL=http://localhost:11434
+
